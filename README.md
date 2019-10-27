@@ -71,6 +71,12 @@ We made an account on mongodb.com
 
     MongoDB Connected: traversy-node-js-api-masterclass-shard-00-02-9n706.mongodb.net
 
+<br/>
+
+### 3. Colors In The Console
+
+    $ npm install --save colors
+
 ---
 
 **Marley**
