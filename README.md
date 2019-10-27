@@ -15,7 +15,7 @@ https://github.com/bradtraversy/devcamper-api
 
 <br/>
 
-### 1. Project Specs & Resources
+### 2. Basic Express Server, dotenv & Git
 
     $ cd api
     $ npm init -y
@@ -24,6 +24,18 @@ https://github.com/bradtraversy/devcamper-api
     $ npm install --save-dev nodemon
 
     $ npm run dev
+
+<br/>
+
+### 3. Creating Routes & Responses In Express
+
+<br/>
+
+![Application](/img/pic-02-01.png?raw=true)
+
+<br/>
+
+### 4. Using The Express Router
 
 ---
 
