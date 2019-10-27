@@ -37,6 +37,10 @@ https://github.com/bradtraversy/devcamper-api
 
 ### 4. Using The Express Router
 
+<br/>
+
+### 5. Creating Controller Methods
+
 ---
 
 **Marley**
