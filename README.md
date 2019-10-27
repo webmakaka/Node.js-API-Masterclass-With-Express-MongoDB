@@ -41,6 +41,12 @@ https://github.com/bradtraversy/devcamper-api
 
 ### 5. Creating Controller Methods
 
+<br/>
+
+### 6. Intro To Middleware
+
+    $ npm install --save-dev morgan
+
 ---
 
 **Marley**
