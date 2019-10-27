@@ -5,6 +5,26 @@ https://github.com/bradtraversy/devcamper-api
 
 ---
 
+<br/>
+
+## 2. HTTP Intro - Headers, Body, Status Codes, etc
+
+<br/>
+
+## 3. Starting Our DevCamper Project
+
+<br/>
+
+### 1. Project Specs & Resources
+
+    $ cd api
+    $ npm init -y
+
+    $ npm install --save express dotenv
+    $ npm install --save-dev nodemon
+
+    $ npm run dev
+
 ---
 
 **Marley**
