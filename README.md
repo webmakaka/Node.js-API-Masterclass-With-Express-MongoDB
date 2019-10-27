@@ -47,6 +47,30 @@ https://github.com/bradtraversy/devcamper-api
 
     $ npm install --save-dev morgan
 
+<br/>
+
+### 7. Postman Environment & Collections
+
+<br/>
+
+## 4. Getting Started With MongoDB & Bootcamps Resource
+
+<br/>
+
+### 1. MongoDB Atlas & Compass Setup
+
+We made an account on mongodb.com
+
+<br/>
+
+### 2. Connecting To The Database With Mongoose
+
+    $ npm install --save mongoose
+
+<br/>
+
+    MongoDB Connected: traversy-node-js-api-masterclass-shard-00-02-9n706.mongodb.net
+
 ---
 
 **Marley**
