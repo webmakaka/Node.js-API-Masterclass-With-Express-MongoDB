@@ -211,6 +211,14 @@ We made an account on mongodb.com
     -X DELETE localhost:5000/api/v1/bootcamps/5db62fd567c1170dd52c2c34 \
     | python -m json.tool
 
+<br/>
+
+## 5. Custom Error Handling & Mongoose Middleware
+
+<br/>
+
+### 1. Error Handler Middleware
+
 ---
 
 **Marley**
