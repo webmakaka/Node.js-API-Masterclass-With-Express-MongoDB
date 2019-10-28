@@ -168,6 +168,22 @@ We made an account on mongodb.com
     -X POST localhost:5000/api/v1/bootcamps \
     | python -m json.tool
 
+<br/>
+
+### 6. Fetching Bootcamps - GET
+
+    $ curl \
+      -H "Content-Type: application/json" \
+      -X GET localhost:5000/api/v1/bootcamps \
+      | python -m json.tool
+
+<br/>
+
+    $ curl \
+    -H "Content-Type: application/json" \
+    -X GET localhost:5000/api/v1/bootcamps/5db62fd567c1170dd52c2c34 \
+    | python -m json.tool
+
 ---
 
 **Marley**
