@@ -184,6 +184,33 @@ We made an account on mongodb.com
     -X GET localhost:5000/api/v1/bootcamps/5db62fd567c1170dd52c2c34 \
     | python -m json.tool
 
+<br/>
+
+### 7. Updating & Deleting Bootcamps - PUT & DELETE
+
+    $ curl -d '{
+    	"housing": true
+    }' \
+    -H "Content-Type: application/json" \
+    -X PUT localhost:5000/api/v1/bootcamps/5db62fd567c1170dd52c2c34 \
+    | python -m json.tool
+
+<br/>
+
+    $ curl -d '{
+    	"careers": ["UI/UX"]
+    }' \
+    -H "Content-Type: application/json" \
+    -X PUT localhost:5000/api/v1/bootcamps/5db62fd567c1170dd52c2c34 \
+    | python -m json.tool
+
+<br/>
+
+    $ curl \
+    -H "Content-Type: application/json" \
+    -X DELETE localhost:5000/api/v1/bootcamps/5db62fd567c1170dd52c2c34 \
+    | python -m json.tool
+
 ---
 
 **Marley**
