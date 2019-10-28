@@ -244,6 +244,40 @@ We made an account on mongodb.com
 
 ### 5. AsyncAwait Middleware
 
+<br/>
+
+### 6. Mongoose Middleware & Slugify
+
+    $ npm install --save slugify
+
+We deleted all documents in the database
+
+    $ curl -d '{
+      "user": "5d7a514b5d2c12c7449be045",
+    	"name": "Devworks Bootcamp",
+    	"description": "Devworks is a full stack JavaScript Bootcamp located in the heart of Boston that focuses on the technologies you need to get a high paying job as a web developer",
+    	"website": "https://devworks.com",
+    	"phone": "(111) 111-1111",
+    	"email": "enroll@devworks.com",
+    	"address": "233 Bay State Rd Boston MA 02215",
+    	"careers": ["Web Development", "UI/UX", "Business"],
+    	"housing": true,
+    	"jobAssistance": true,
+    	"jobGuarantee": false,
+    	"acceptGi": true
+    }' \
+    -H "Content-Type: application/json" \
+    -X POST localhost:5000/api/v1/bootcamps \
+    | python -m json.tool
+
+<br/>
+
+```
+***
+"slug": "devworks-bootcamp",
+***
+```
+
 ---
 
 **Marley**
