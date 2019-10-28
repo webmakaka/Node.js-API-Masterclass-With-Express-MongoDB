@@ -219,6 +219,14 @@ We made an account on mongodb.com
 
 ### 1. Error Handler Middleware
 
+<br/>
+
+### 2. Custom ErrorResponse Class
+
+<br/>
+
+### 3. Mongoose Error Handling [1]
+
 ---
 
 **Marley**
