@@ -278,6 +278,44 @@ We deleted all documents in the database
 ***
 ```
 
+<br/>
+
+### 7. GeoJSON Location & Geocoder Hook - MapQuest API
+
+register
+
+https://developer.mapquest.com/
+
+Manage Keys --> My Application's Key --> Consumer Key --> insert to config
+
+<br/>
+
+    $ npm install --save node-geocoder
+
+<br/>
+
+We deleted all documents in the database
+
+<br/>
+
+    $ curl -d '{
+      "user": "5d7a514b5d2c12c7449be045",
+    	"name": "Devworks Bootcamp",
+    	"description": "Devworks is a full stack JavaScript Bootcamp located in the heart of Boston that focuses on the technologies you need to get a high paying job as a web developer",
+    	"website": "https://devworks.com",
+    	"phone": "(111) 111-1111",
+    	"email": "enroll@devworks.com",
+    	"address": "233 Bay State Rd Boston MA 02215",
+    	"careers": ["Web Development", "UI/UX", "Business"],
+    	"housing": true,
+    	"jobAssistance": true,
+    	"jobGuarantee": false,
+    	"acceptGi": true
+    }' \
+    -H "Content-Type: application/json" \
+    -X POST localhost:5000/api/v1/bootcamps \
+    | python -m json.tool
+
 ---
 
 **Marley**
