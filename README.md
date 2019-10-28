@@ -236,6 +236,14 @@ We made an account on mongodb.com
     -X POST localhost:5000/api/v1/bootcamps \
     | python -m json.tool
 
+<br/>
+
+### 4. Mongoose Error Handling [2]
+
+<br/>
+
+### 5. AsyncAwait Middleware
+
 ---
 
 **Marley**
