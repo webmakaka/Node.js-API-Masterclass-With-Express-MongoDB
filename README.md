@@ -227,6 +227,15 @@ We made an account on mongodb.com
 
 ### 3. Mongoose Error Handling [1]
 
+<br/>
+
+### 4. Mongoose Error Handling [2]
+
+    $ curl \
+    -H "Content-Type: application/json" \
+    -X POST localhost:5000/api/v1/bootcamps \
+    | python -m json.tool
+
 ---
 
 **Marley**
