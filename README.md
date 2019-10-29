@@ -371,6 +371,12 @@ We deleted all documents in the database
     -X GET localhost:5000/api/v1/bootcamps?select=name,description,housing&sort=-name \
     | python -m json.tool
 
+<br/>
+
+### 5. Adding Pagination
+
+http://localhost:5000/api/v1/bootcamps?page=2
+
 ---
 
 **Marley**
