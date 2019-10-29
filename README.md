@@ -339,6 +339,38 @@ We deleted all documents in the database
     -X GET localhost:5000/api/v1/bootcamps/radius/02118/10 \
     | python -m json.tool
 
+<br/>
+
+### 3. Advanced Filtering
+
+    $ curl \
+    -H "Content-Type: application/json" \
+    -X GET localhost:5000/api/v1/bootcamps?careers[in]=Business \
+    | python -m json.tool
+
+<br/>
+
+### 4. Select & Sorting
+
+    $ curl \
+    -H "Content-Type: application/json" \
+    -X GET localhost:5000/api/v1/bootcamps?select=name,description,housing&housing=true \
+    | python -m json.tool
+
+<br/>
+
+    $ curl \
+    -H "Content-Type: application/json" \
+    -X GET localhost:5000/api/v1/bootcamps?select=name,description,housing&sort=name \
+    | python -m json.tool
+
+<br/>
+
+    $ curl \
+    -H "Content-Type: application/json" \
+    -X GET localhost:5000/api/v1/bootcamps?select=name,description,housing&sort=-name \
+    | python -m json.tool
+
 ---
 
 **Marley**
