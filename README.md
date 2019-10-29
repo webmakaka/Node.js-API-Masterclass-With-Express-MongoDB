@@ -318,7 +318,7 @@ We deleted all documents in the database
 
 <br/ >
 
-### 6. Mongoose Advanced Querying & Relationships
+## 6. Mongoose Advanced Querying & Relationships
 
 <br/>
 
@@ -329,6 +329,15 @@ We deleted all documents in the database
 
     // DestroyData
     $ node seeder -d
+
+<br/>
+
+### 2. Geospatial Query - Get Bootcamps Within Radius
+
+    $ curl \
+    -H "Content-Type: application/json" \
+    -X GET localhost:5000/api/v1/bootcamps/radius/02118/10 \
+    | python -m json.tool
 
 ---
 
