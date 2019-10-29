@@ -316,6 +316,20 @@ We deleted all documents in the database
     -X POST localhost:5000/api/v1/bootcamps \
     | python -m json.tool
 
+<br/ >
+
+### 6. Mongoose Advanced Querying & Relationships
+
+<br/>
+
+### 1. Database Seeder For Bootcamps
+
+    // ImportData
+    $ node seeder -i
+
+    // DestroyData
+    $ node seeder -d
+
 ---
 
 **Marley**
