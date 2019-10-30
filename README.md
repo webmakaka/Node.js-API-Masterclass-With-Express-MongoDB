@@ -439,6 +439,41 @@ http://localhost:5000/api/v1/bootcamps/
 
 http://localhost:5000/api/v1/bootcamps/
 
+<br/>
+
+### 10. Update & Delete Course
+
+    // DestroyData
+    $ node seeder -d
+
+    // ImportData
+    $ node seeder -i
+
+<br/>
+
+http://localhost:5000/api/v1/courses
+
+<br/>
+
+    $ curl -d '{
+    	"tuition": 13000,
+      "minimumSkill": "advanced"
+    }' \
+    -H "Content-Type: application/json" \
+    -X PUT localhost:5000/api/v1/courses/5d725a4a7b292f5f8ceff789 \
+    | python -m json.tool
+
+<br/>
+
+http://localhost:5000/api/v1/courses/5d725a4a7b292f5f8ceff789
+
+<br/>
+
+    $ curl \
+    -H "Content-Type: application/json" \
+    -X DELETE localhost:5000/api/v1/courses/5d725a4a7b292f5f8ceff789 \
+    | python -m json.tool
+
 ---
 
 **Marley**
