@@ -474,6 +474,10 @@ http://localhost:5000/api/v1/courses/5d725a4a7b292f5f8ceff789
     -X DELETE localhost:5000/api/v1/courses/5d725a4a7b292f5f8ceff789 \
     | python -m json.tool
 
+<br/>
+
+### 11. Aggregate - Calculating The Average Course Cost
+
 ---
 
 **Marley**
