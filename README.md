@@ -386,6 +386,19 @@ http://localhost:5000/api/v1/courses
 
 http://localhost:5000/api/v1/bootcamps/5d713995b721c3bb38c1f5d0/courses
 
+<br/>
+
+### 8. Populate, Virtuals & Cascade Delete
+
+http://localhost:5000/api/v1/bootcamps
+
+<br/>
+
+    $ curl \
+    -H "Content-Type: application/json" \
+    -X DELETE localhost:5000/api/v1/bootcamps/5d725a1b7b292f5f8ceff788 \
+    | python -m json.tool
+
 ---
 
 **Marley**
