@@ -399,6 +399,46 @@ http://localhost:5000/api/v1/bootcamps
     -X DELETE localhost:5000/api/v1/bootcamps/5d725a1b7b292f5f8ceff788 \
     | python -m json.tool
 
+<br/>
+
+### 9. Single Course & Add Course
+
+http://localhost:5000/api/v1/courses/5d725a4a7b292f5f8ceff789
+
+http://localhost:5000/api/v1/bootcamps/
+
+<br/>
+
+    $ curl -d '{
+      "title": "Front End Web Development",
+      "description": "This course will provide you with all of the essentials to become a successful frontend web developer. You will learn to master HTML, CSS and front end JavaScript, along with tools like Git, VSCode and front end frameworks like Vue",
+      "weeks": 8,
+      "tuition": 8000,
+      "minimumSkill": "beginner",
+      "scholarhipsAvailable": true
+    }' \
+    -H "Content-Type: application/json" \
+    -X POST localhost:5000/api/v1/bootcamps/5d713995b721c3bb38c1f5d0/courses \
+    | python -m json.tool
+
+<br/>
+
+    $ curl -d '{
+      "title": "Full Stack Web Development",
+      "description": "In this course you will learn full stack web development, first learning all about the frontend with HTML/CSS/JS/Vue and then the backend with Node.js/Express/MongoDB",
+      "weeks": 12,
+      "tuition": 10000,
+      "minimumSkill": "intermediate",
+      "scholarhipsAvailable": true
+    }' \
+    -H "Content-Type: application/json" \
+    -X POST localhost:5000/api/v1/bootcamps/5d713995b721c3bb38c1f5d0/courses \
+    | python -m json.tool
+
+<br/>
+
+http://localhost:5000/api/v1/bootcamps/
+
 ---
 
 **Marley**
