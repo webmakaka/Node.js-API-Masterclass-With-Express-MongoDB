@@ -352,30 +352,31 @@ We deleted all documents in the database
 
 ### 4. Select & Sorting
 
-    $ curl \
-    -H "Content-Type: application/json" \
-    -X GET localhost:5000/api/v1/bootcamps?select=name,description,housing&housing=true \
-    | python -m json.tool
+http://localhost:5000/api/v1/bootcamps?select=name,description,housing&housing=true
 
 <br/>
 
-    $ curl \
-    -H "Content-Type: application/json" \
-    -X GET localhost:5000/api/v1/bootcamps?select=name,description,housing&sort=name \
-    | python -m json.tool
+http://localhost:5000/api/v1/bootcamps?select=name,description,housing&sort=name
 
 <br/>
 
-    $ curl \
-    -H "Content-Type: application/json" \
-    -X GET localhost:5000/api/v1/bootcamps?select=name,description,housing&sort=-name \
-    | python -m json.tool
+http://localhost:5000/api/v1/bootcamps?select=name,description,housing&sort=-name
 
 <br/>
 
 ### 5. Adding Pagination
 
 http://localhost:5000/api/v1/bootcamps?page=2
+
+<br/>
+
+### 6. Course Model & Seeding
+
+    // DestroyData
+    $ node seeder -d
+
+    // ImportData
+    $ node seeder -i
 
 ---
 
