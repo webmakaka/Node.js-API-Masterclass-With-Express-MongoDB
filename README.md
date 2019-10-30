@@ -378,6 +378,14 @@ http://localhost:5000/api/v1/bootcamps?page=2
     // ImportData
     $ node seeder -i
 
+<br/>
+
+### 7. Course Routes & Controller
+
+http://localhost:5000/api/v1/courses
+
+http://localhost:5000/api/v1/bootcamps/5d713995b721c3bb38c1f5d0/courses
+
 ---
 
 **Marley**
