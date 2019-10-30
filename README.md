@@ -478,6 +478,29 @@ http://localhost:5000/api/v1/courses/5d725a4a7b292f5f8ceff789
 
 ### 11. Aggregate - Calculating The Average Course Cost
 
+<br/>
+
+### 12. Photo Upload For Bootcamp
+
+<br/>
+
+    $ npm install --save express-fileupload
+
+<br/>
+
+    $ curl \
+    -F "file=@/home/marley/1/pic1.jpg" \
+    -X PUT localhost:5000/api/v1/bootcamps/5d725a1b7b292f5f8ceff788/photo \
+    | python -m json.tool
+
+<br/>
+
+http://localhost:5000/uploads/photo_5d725a1b7b292f5f8ceff788.jpg
+
+<br/>
+
+![Application](/img/pic-06-12.png?raw=true)
+
 ---
 
 **Marley**
