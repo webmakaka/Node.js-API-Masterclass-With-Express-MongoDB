@@ -541,6 +541,21 @@ http://localhost:5000/api/v1/courses?page=2&limit=2
     -X POST localhost:5000/api/v1/auth/register \
     | python -m json.tool
 
+<br/>
+
+### 3. Sign & Get JSON Web Token
+
+https://jwt.io/
+
+    $ curl \
+    -d '{"name": "John Doe",
+         "email": "john@gmail.com",
+         "password": "123456",
+         "role": "publisher"}' \
+    -H "Content-Type: application/json" \
+    -X POST localhost:5000/api/v1/auth/register \
+    | python -m json.tool
+
 ---
 
 **Marley**
