@@ -501,6 +501,20 @@ http://localhost:5000/uploads/photo_5d725a1b7b292f5f8ceff788.jpg
 
 ![Application](/img/pic-06-12.png?raw=true)
 
+<br/>
+
+### 13. Advanced Results Middleware
+
+http://localhost:5000/api/v1/bootcamps/
+
+http://localhost:5000/api/v1/bootcamps?page=2
+
+http://localhost:5000/api/v1/bootcamps?select=name,description
+
+http://localhost:5000/api/v1/courses?select=title
+
+http://localhost:5000/api/v1/courses?page=2&limit=2
+
 ---
 
 **Marley**
