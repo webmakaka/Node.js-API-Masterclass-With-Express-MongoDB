@@ -515,6 +515,24 @@ http://localhost:5000/api/v1/courses?select=title
 
 http://localhost:5000/api/v1/courses?page=2&limit=2
 
+<br/>
+
+## 7. Authentication, Users & Permissions - Part 1
+
+<br/>
+
+### 1. User Model
+
+    $ npm install --save jsonwebtoken
+    $ npm install --save bcryptjs
+
+<br/>
+
+    $ curl -d '{}' \
+    -H "Content-Type: application/json" \
+    -X POST localhost:5000/api/v1/auth/register \
+    | python -m json.tool
+
 ---
 
 **Marley**
