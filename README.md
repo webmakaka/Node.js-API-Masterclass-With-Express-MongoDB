@@ -610,6 +610,16 @@ https://jwt.io/
     -X GET localhost:5000/api/v1/auth/me \
     | python -m json.tool
 
+<br/>
+
+### 7. Storing The Token In Postman
+
+<br/>
+
+### 8. Role Authorization
+
+Only user 'publisher' and 'admin' can do actions to create / update / delete
+
 ---
 
 **Marley**
