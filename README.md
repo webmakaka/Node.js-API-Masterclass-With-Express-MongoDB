@@ -556,6 +556,19 @@ https://jwt.io/
     -X POST localhost:5000/api/v1/auth/register \
     | python -m json.tool
 
+<br/>
+
+### 4. User Login
+
+    $ curl \
+    -d '{
+         "email": "john@gmail.com",
+         "password": "123456"
+         }' \
+    -H "Content-Type: application/json" \
+    -X POST localhost:5000/api/v1/auth/login \
+    | python -m json.tool
+
 ---
 
 **Marley**
