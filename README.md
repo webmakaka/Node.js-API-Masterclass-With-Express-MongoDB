@@ -569,6 +569,47 @@ https://jwt.io/
     -X POST localhost:5000/api/v1/auth/login \
     | python -m json.tool
 
+<br/>
+
+### 5. Sending JWT In a Cookie
+
+    $ npm install --save cookie-parser
+
+<br/>
+
+### 6. Auth Protect Middleware
+
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkYmI0YTg5OWE1ODE1M2ZmNjEzYWEzOSIsImlhdCI6MTU3MjU1NTQwMSwiZXhwIjoxNTc1MTQ3NDAxfQ.2G0jVvVPpHPem-SEGLGg3-_JMmYqnOsIuY3RjhVkfQY"
+
+<br/>
+
+    $ curl -d '{
+      "user": "5d7a514b5d2c12c7449be045",
+    	"name": "Devworks Bootcamp",
+    	"description": "Devworks is a full stack JavaScript Bootcamp located in the heart of Boston that focuses on the technologies you need to get a high paying job as a web developer",
+    	"website": "https://devworks.com",
+    	"phone": "(111) 111-1111",
+    	"email": "enroll@devworks.com",
+    	"address": "233 Bay State Rd Boston MA 02215",
+    	"careers": ["Web Development", "UI/UX", "Business"],
+    	"housing": true,
+    	"jobAssistance": true,
+    	"jobGuarantee": false,
+    	"acceptGi": true
+    }' \
+    -H "Content-Type: application/json" \
+    -H "authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkYmI0YTg5OWE1ODE1M2ZmNjEzYWEzOSIsImlhdCI6MTU3MjU1NTQwMSwiZXhwIjoxNTc1MTQ3NDAxfQ.2G0jVvVPpHPem-SEGLGg3-_JMmYqnOsIuY3RjhVkfQY" \
+    -X POST localhost:5000/api/v1/bootcamps \
+    | python -m json.tool
+
+<br/>
+
+    $ curl \
+    -H "Content-Type: application/json" \
+    -H "authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkYmI0YTg5OWE1ODE1M2ZmNjEzYWEzOSIsImlhdCI6MTU3MjU1NTQwMSwiZXhwIjoxNTc1MTQ3NDAxfQ.2G0jVvVPpHPem-SEGLGg3-_JMmYqnOsIuY3RjhVkfQY" \
+    -X GET localhost:5000/api/v1/auth/me \
+    | python -m json.tool
+
 ---
 
 **Marley**
