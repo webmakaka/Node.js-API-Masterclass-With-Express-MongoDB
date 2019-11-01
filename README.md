@@ -870,6 +870,42 @@ mongodb -> set role "admin" to user.
     -X GET localhost:5000/api/v1/bootcamps/5d725a1b7b292f5f8ceff788/reviews \
     | python -m json.tool
 
+<br/>
+
+### 3. Add Review For Bootcamp
+
+User with 'publisher' role shouldn't create reviews
+
+    $ curl \
+    -d '{
+         "email": "greg@gmail.com",
+         "password": "123456"
+         }' \
+    -H "Content-Type: application/json" \
+    -X POST localhost:5000/api/v1/auth/login \
+    | python -m json.tool
+
+<br/>
+
+    $ curl \
+    -H "Content-Type: application/json" \
+    -H "authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjOGExZDViMDE5MGIyMTQzNjBkYzAzMyIsImlhdCI6MTU3MjYwNjQ5NSwiZXhwIjoxNTc1MTk4NDk1fQ.lgUqJEJDp9dShq4HeA9-CiiTt9zfB-7ZVaRotI928l0" \
+    -X GET localhost:5000/api/v1/auth/me \
+    | python -m json.tool
+
+<br/>
+
+    $ curl \
+    -d '{
+         "title": "Nice Bootcamp",
+         "text": "I learned a lot",
+         "rating": 8
+         }' \
+    -H "Content-Type: application/json" \
+    -H "authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjOGExZDViMDE5MGIyMTQzNjBkYzAzMyIsImlhdCI6MTU3MjYwNjQ5NSwiZXhwIjoxNTc1MTk4NDk1fQ.lgUqJEJDp9dShq4HeA9-CiiTt9zfB-7ZVaRotI928l0" \
+    -X POST localhost:5000/api/v1/bootcamps/5d725a1b7b292f5f8ceff788/reviews/ \
+    | python -m json.tool
+
 ---
 
 **Marley**
