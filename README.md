@@ -831,6 +831,26 @@ mongodb -> set role "admin" to user.
     -X DELETE localhost:5000/api/v1/users/5dbbd7c42041035e7eb80426 \
     | python -m json.tool
 
+<br/>
+
+## 9. Bootcamp Reviews & Ratings
+
+<br/>
+
+### 1. Review Model & Get Reviews
+
+    $ curl \
+    -H "Content-Type: application/json" \
+    -X GET localhost:5000/api/v1/reviews \
+    | python -m json.tool
+
+<br/>
+
+    $ curl \
+    -H "Content-Type: application/json" \
+    -X GET localhost:5000/api/v1/bootcamps/5d725a1b7b292f5f8ceff788/reviews \
+    | python -m json.tool
+
 ---
 
 **Marley**
