@@ -662,6 +662,29 @@ Only onwer or admin can modify course
     -X POST localhost:5000/api/v1/auth/forgotpassword \
     | python -m json.tool
 
+<br/>
+
+### 5. Forgot Password - Send Email
+
+https://mailtrap.io/  
+http://nodemailer.com/about/
+
+    $ npm install --save nodemailer
+
+<br/>
+
+    $ curl \
+    -d '{
+      "email": "john@gmail.com"
+    }' \
+    -H "Content-Type: application/json" \
+    -X POST localhost:5000/api/v1/auth/forgotpassword \
+    | python -m json.tool
+
+<br/>
+
+![Application](/img/pic-08-05.png?raw=true)
+
 ---
 
 **Marley**
