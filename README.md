@@ -906,6 +906,62 @@ User with 'publisher' role shouldn't create reviews
     -X POST localhost:5000/api/v1/bootcamps/5d725a1b7b292f5f8ceff788/reviews/ \
     | python -m json.tool
 
+<br/>
+
+### 4. Aggregate - Calculate Average Rating
+
+    // DestroyData
+    $ node seeder -d
+
+<br/>
+
+    $ curl \
+    -d '{"name": "John Doe",
+         "email": "john@gmail.com",
+         "password": "123456",
+         "role": "user"}' \
+    -H "Content-Type: application/json" \
+    -X POST localhost:5000/api/v1/auth/register \
+    | python -m json.tool
+
+<br/>
+
+    $ curl \
+    -d '{"name": "Jack Smith",
+         "email": "jack@gmail.com",
+         "password": "123456",
+         "role": "user"}' \
+    -H "Content-Type: application/json" \
+    -X POST localhost:5000/api/v1/auth/register \
+    | python -m json.tool
+
+<br/>
+
+    $ curl \
+    -d '{"name": "Mary Smith",
+         "email": "mary@gmail.com",
+         "password": "123456",
+         "role": "user"}' \
+    -H "Content-Type: application/json" \
+    -X POST localhost:5000/api/v1/auth/register \
+    | python -m json.tool
+
+<br/>
+
+    // Login
+    $ curl \
+    -d '{
+         "email": "john@gmail.com",
+         "password": "123456"
+         }' \
+    -H "Content-Type: application/json" \
+    -X POST localhost:5000/api/v1/auth/login \
+    | python -m json.tool
+
+<br/>
+
+Did not test. Need to create a bootcamp, then create review and check average rating for 3 users. User with role 'user' has no premission to create bootcamp.
+
 ---
 
 **Marley**
