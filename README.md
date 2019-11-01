@@ -188,7 +188,8 @@ We made an account on mongodb.com
 
 ### 7. Updating & Deleting Bootcamps - PUT & DELETE
 
-    $ curl -d '{
+    $ curl \
+    -d '{
     	"housing": true
     }' \
     -H "Content-Type: application/json" \
@@ -751,6 +752,83 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkN2E1MTRiNWQyYzEyYzc0NDliZTA0NSI
     -H "Content-Type: application/json" \
     -H "authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkN2E1MTRiNWQyYzEyYzc0NDliZTA0NSIsImlhdCI6MTU3MjU4NTY1OCwiZXhwIjoxNTc1MTc3NjU4fQ.vhxaMRCksKb0LHx5T91JqrX4xo0i2Im_BOuv3vShmXk" \
     -X PUT localhost:5000/api/v1/auth/updatepassword \
+    | python -m json.tool
+
+<br/>
+
+### 8. Admin Users CRUD
+
+mongodb -> set role "admin" to user.
+
+<br/>
+
+    // Me
+    $ curl \
+    -H "Content-Type: application/json" \
+    -H "authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkN2E1MTRiNWQyYzEyYzc0NDliZTA0NSIsImlhdCI6MTU3MjU4NTY1OCwiZXhwIjoxNTc1MTc3NjU4fQ.vhxaMRCksKb0LHx5T91JqrX4xo0i2Im_BOuv3vShmXk" \
+    -X GET localhost:5000/api/v1/auth/me \
+    | python -m json.tool
+
+<br/>
+
+    // Get all user
+    $ curl \
+    -H "Content-Type: application/json" \
+    -H "authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkN2E1MTRiNWQyYzEyYzc0NDliZTA0NSIsImlhdCI6MTU3MjU4NTY1OCwiZXhwIjoxNTc1MTc3NjU4fQ.vhxaMRCksKb0LHx5T91JqrX4xo0i2Im_BOuv3vShmXk" \
+    -X GET localhost:5000/api/v1/users \
+    | python -m json.tool
+
+<br/>
+
+    // Get single user
+    $ curl \
+    -H "Content-Type: application/json" \
+    -H "authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkN2E1MTRiNWQyYzEyYzc0NDliZTA0NSIsImlhdCI6MTU3MjU4NTY1OCwiZXhwIjoxNTc1MTc3NjU4fQ.vhxaMRCksKb0LHx5T91JqrX4xo0i2Im_BOuv3vShmXk" \
+    -X GET localhost:5000/api/v1/users/5c8a1d5b0190b214360dc032 \
+    | python -m json.tool
+
+<br/>
+
+    // Get single user
+    $ curl \
+    -H "Content-Type: application/json" \
+    -H "authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkN2E1MTRiNWQyYzEyYzc0NDliZTA0NSIsImlhdCI6MTU3MjU4NTY1OCwiZXhwIjoxNTc1MTc3NjU4fQ.vhxaMRCksKb0LHx5T91JqrX4xo0i2Im_BOuv3vShmXk" \
+    -X GET localhost:5000/api/v1/users/5c8a1d5b0190b214360dc032 \
+    | python -m json.tool
+
+<br/>
+
+    // Create user
+    $ curl \
+    -d '{
+    	"name": "Nate Smith",
+        "email": "nate@gmail.com",
+        "password": "123456"
+    }' \
+    -H "Content-Type: application/json" \
+    -H "authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkN2E1MTRiNWQyYzEyYzc0NDliZTA0NSIsImlhdCI6MTU3MjU4NTY1OCwiZXhwIjoxNTc1MTc3NjU4fQ.vhxaMRCksKb0LHx5T91JqrX4xo0i2Im_BOuv3vShmXk" \
+    -X POST localhost:5000/api/v1/users/ \
+    | python -m json.tool
+
+<br/>
+
+    // Update user
+    $ curl \
+    -d '{
+    	"name": "Nate Johnson"
+    }' \
+    -H "Content-Type: application/json" \
+    -H "authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkN2E1MTRiNWQyYzEyYzc0NDliZTA0NSIsImlhdCI6MTU3MjU4NTY1OCwiZXhwIjoxNTc1MTc3NjU4fQ.vhxaMRCksKb0LHx5T91JqrX4xo0i2Im_BOuv3vShmXk" \
+    -X PUT localhost:5000/api/v1/users/5dbbd7c42041035e7eb80426 \
+    | python -m json.tool
+
+<br/>
+
+    // Delete user
+    $ curl \
+    -H "Content-Type: application/json" \
+    -H "authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkN2E1MTRiNWQyYzEyYzc0NDliZTA0NSIsImlhdCI6MTU3MjU4NTY1OCwiZXhwIjoxNTc1MTc3NjU4fQ.vhxaMRCksKb0LHx5T91JqrX4xo0i2Im_BOuv3vShmXk" \
+    -X DELETE localhost:5000/api/v1/users/5dbbd7c42041035e7eb80426 \
     | python -m json.tool
 
 ---
