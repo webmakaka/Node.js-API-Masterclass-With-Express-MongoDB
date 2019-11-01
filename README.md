@@ -620,6 +620,24 @@ https://jwt.io/
 
 Only user 'publisher' and 'admin' can do actions to create / update / delete
 
+<br/>
+
+## 8. Authentication, Users & Permissions - Part 2
+
+<br/>
+
+### 1. Bootcamp & User Relationship
+
+    // DestroyData
+    $ node seeder -d
+
+    // ImportData
+    $ node seeder -i
+
+<br/>
+
+http://localhost:5000/api/v1/bootcamps/
+
 ---
 
 **Marley**
