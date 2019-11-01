@@ -638,6 +638,10 @@ Only user 'publisher' and 'admin' can do actions to create / update / delete
 
 http://localhost:5000/api/v1/bootcamps/
 
+<br/>
+
+### 2. Bootcamp Ownership
+
 ---
 
 **Marley**
