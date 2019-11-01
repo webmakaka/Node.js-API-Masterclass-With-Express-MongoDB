@@ -1047,6 +1047,17 @@ https://github.com/jsonmaur/xss-clean
 
     $ npm install --save xss-clean
 
+<br/>
+
+### 4. Rate Limiting, HPP & CORS
+
+    $ npm install --save express-rate-limit
+    $ npm install --save hpp
+
+https://github.com/expressjs/cors
+
+    $ npm install --save cors
+
 ---
 
 **Marley**
