@@ -683,7 +683,47 @@ http://nodemailer.com/about/
 
 <br/>
 
-![Application](/img/pic-08-05.png?raw=true)
+![Application](/img/pic-08-05-01.png?raw=true)
+
+<br/>
+
+![Application](/img/pic-08-05-02.png?raw=true)
+
+<br/>
+
+### 6. Reset Password
+
+    $ curl \
+    -d '{
+      "password": "654321"
+    }' \
+    -H "Content-Type: application/json" \
+    -X PUT http://localhost:5000/api/v1/auth/resetpassword/bcedda5593f1799bd34ba1a49608f92a0434d154 \
+    | python -m json.tool
+
+<br/>
+
+    // Invalid
+    $ curl \
+    -d '{
+         "email": "john@gmail.com",
+         "password": "123456"
+         }' \
+    -H "Content-Type: application/json" \
+    -X POST localhost:5000/api/v1/auth/login \
+    | python -m json.tool
+
+<br/>
+
+    // Valid
+    $ curl \
+    -d '{
+         "email": "john@gmail.com",
+         "password": "654321"
+         }' \
+    -H "Content-Type: application/json" \
+    -X POST localhost:5000/api/v1/auth/login \
+    | python -m json.tool
 
 ---
 
