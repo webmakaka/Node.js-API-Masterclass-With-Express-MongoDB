@@ -725,6 +725,34 @@ http://nodemailer.com/about/
     -X POST localhost:5000/api/v1/auth/login \
     | python -m json.tool
 
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkN2E1MTRiNWQyYzEyYzc0NDliZTA0NSIsImlhdCI6MTU3MjU4NTY1OCwiZXhwIjoxNTc1MTc3NjU4fQ.vhxaMRCksKb0LHx5T91JqrX4xo0i2Im_BOuv3vShmXk
+
+<br/>
+
+### 7. Update User Details
+
+    $ curl \
+    -d '{
+         "email": "john@gmail.com",
+         "name": "John Smith"
+         }' \
+    -H "Content-Type: application/json" \
+    -H "authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkN2E1MTRiNWQyYzEyYzc0NDliZTA0NSIsImlhdCI6MTU3MjU4NTY1OCwiZXhwIjoxNTc1MTc3NjU4fQ.vhxaMRCksKb0LHx5T91JqrX4xo0i2Im_BOuv3vShmXk" \
+    -X PUT localhost:5000/api/v1/auth/updatedetails \
+    | python -m json.tool
+
+<br/>
+
+    $ curl \
+    -d '{
+         "currentPassword": "654321",
+         "newPassword": "123456"
+         }' \
+    -H "Content-Type: application/json" \
+    -H "authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkN2E1MTRiNWQyYzEyYzc0NDliZTA0NSIsImlhdCI6MTU3MjU4NTY1OCwiZXhwIjoxNTc1MTc3NjU4fQ.vhxaMRCksKb0LHx5T91JqrX4xo0i2Im_BOuv3vShmXk" \
+    -X PUT localhost:5000/api/v1/auth/updatepassword \
+    | python -m json.tool
+
 ---
 
 **Marley**
