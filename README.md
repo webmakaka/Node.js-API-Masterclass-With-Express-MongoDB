@@ -1035,6 +1035,18 @@ Did not test. Need to create a bootcamp, then create review and check average ra
 
     $ npm install --save express-mongo-sanitize
 
+<br/>
+
+### 3. XSS Protection & Security Headers
+
+https://helmetjs.github.io/
+
+    $ npm install --save helmet
+
+https://github.com/jsonmaur/xss-clean
+
+    $ npm install --save xss-clean
+
 ---
 
 **Marley**
