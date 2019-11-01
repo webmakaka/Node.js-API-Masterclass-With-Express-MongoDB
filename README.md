@@ -839,9 +839,28 @@ mongodb -> set role "admin" to user.
 
 ### 1. Review Model & Get Reviews
 
+<br/>
+
+### 2. Get Single Review & Update Seeder
+
+    // DestroyData
+    $ node seeder -d
+
+    // ImportData
+    $ node seeder -i
+
+<br/>
+
     $ curl \
     -H "Content-Type: application/json" \
     -X GET localhost:5000/api/v1/reviews \
+    | python -m json.tool
+
+<br/>
+
+    $ curl \
+    -H "Content-Type: application/json" \
+    -X GET localhost:5000/api/v1/reviews/5d7a514b5d2c12c7449be020 \
     | python -m json.tool
 
 <br/>
