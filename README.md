@@ -650,6 +650,18 @@ Only onwer or admin can modify bootcamp
 
 Only onwer or admin can modify course
 
+<br/>
+
+### 4. Forgot Password - Generate Token
+
+    $ curl \
+    -d '{
+      "email": "john@gmail.com"
+    }' \
+    -H "Content-Type: application/json" \
+    -X POST localhost:5000/api/v1/auth/forgotpassword \
+    | python -m json.tool
+
 ---
 
 **Marley**

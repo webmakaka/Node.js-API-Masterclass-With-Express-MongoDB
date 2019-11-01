@@ -2,6 +2,42 @@ const ErrorResponse = require('../utils/errorResponse');
 const asyncHandler = require('../middleware/async');
 const User = require('../models/User');
 
+// @desc      Get current logged in user
+// @route     POST /api/v1/auth/me
+// @access    Private
+exports.getMe = asyncHandler(async (req, res, next) => {
+  const user = await User.findById(req.user.id);
+
+  res.status(200).json({
+    success: true,
+    data: user
+  });
+});
+
+// @desc      Forgot password
+// @route     POST /api/v1/auth/forgotpassword
+// @access    Private
+exports.forgotPassword = asyncHandler(async (req, res, next) => {
+  const user = await User.findOne({ email: req.body.email });
+
+  if (!user) {
+    return next(new ErrorResponse('There is not user with that email', 404));
+  }
+
+  // Get reset token
+  const resetToken = user.getResetPasswordToken();
+
+  console.log('resetToken');
+  console.log(resetToken);
+
+  await user.save({ validateBeforeSave: false });
+
+  res.status(200).json({
+    success: true,
+    data: user
+  });
+});
+
 // @desc      Register user
 // @route     POST /api/v1/auth/register
 // @access    Public
@@ -70,15 +106,3 @@ const sendTokenResponse = (user, statusCode, res) => {
       token
     });
 };
-
-// @desc      Get current logged in user
-// @route     POST /api/v1/auth/me
-// @access    Private
-exports.getMe = asyncHandler(async (req, res, next) => {
-  const user = await User.findById(req.user.id);
-
-  res.status(200).json({
-    success: true,
-    data: user
-  });
-});
