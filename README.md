@@ -1014,6 +1014,21 @@ Did not test. Need to create a bootcamp, then create review and check average ra
     -X DELETE localhost:5000/api/v1/reviews/5d7a514b5d2c12c7449be020 \
     | python -m json.tool
 
+<br/>
+
+## 10. API Security
+
+<br/>
+
+### 1. Logout To Clear Token Cookie
+
+    // Logout
+    $ curl \
+    -H "Content-Type: application/json" \
+    -H "authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjOGExZDViMDE5MGIyMTQzNjBkYzAzMyIsImlhdCI6MTU3MjYwNjQ5NSwiZXhwIjoxNTc1MTk4NDk1fQ.lgUqJEJDp9dShq4HeA9-CiiTt9zfB-7ZVaRotI928l0" \
+    -X GET localhost:5000/api/v1/auth/logout \
+    | python -m json.tool
+
 ---
 
 **Marley**
