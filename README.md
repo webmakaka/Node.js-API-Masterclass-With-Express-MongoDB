@@ -851,6 +851,7 @@ mongodb -> set role "admin" to user.
 
 <br/>
 
+    // Get all reviews
     $ curl \
     -H "Content-Type: application/json" \
     -X GET localhost:5000/api/v1/reviews \
@@ -961,6 +962,57 @@ User with 'publisher' role shouldn't create reviews
 <br/>
 
 Did not test. Need to create a bootcamp, then create review and check average rating for 3 users. User with role 'user' has no premission to create bootcamp.
+
+<br/>
+
+### 5. Update & Delete Reviews
+
+    // DestroyData
+    $ node seeder -d
+
+    // ImportData
+    $ node seeder -i
+
+<br/>
+
+    // Login
+    $ curl \
+    -d '{
+         "email": "greg@gmail.com",
+         "password": "123456"
+         }' \
+    -H "Content-Type: application/json" \
+    -X POST localhost:5000/api/v1/auth/login \
+    | python -m json.tool
+
+<br/>
+
+    // Get all reviews
+    $ curl \
+    -H "Content-Type: application/json" \
+    -X GET localhost:5000/api/v1/reviews \
+    | python -m json.tool
+
+<br/>
+
+    $ curl \
+    -d '{
+         "title": "Had Fun",
+         "text": "Super",
+         "rating": 10
+         }' \
+    -H "Content-Type: application/json" \
+    -H "authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjOGExZDViMDE5MGIyMTQzNjBkYzAzMyIsImlhdCI6MTU3MjYwOTE4NiwiZXhwIjoxNTc1MjAxMTg2fQ.3fY2OVWxj7YWxD3vfhr459MX0vb4ewtSm9BU8nWQrfc" \
+    -X PUT localhost:5000/api/v1/reviews/5d7a514b5d2c12c7449be020 \
+    | python -m json.tool
+
+<br/>
+
+    $ curl \
+    -H "Content-Type: application/json" \
+    -H "authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjOGExZDViMDE5MGIyMTQzNjBkYzAzMyIsImlhdCI6MTU3MjYwOTE4NiwiZXhwIjoxNTc1MjAxMTg2fQ.3fY2OVWxj7YWxD3vfhr459MX0vb4ewtSm9BU8nWQrfc" \
+    -X DELETE localhost:5000/api/v1/reviews/5d7a514b5d2c12c7449be020 \
+    | python -m json.tool
 
 ---
 
