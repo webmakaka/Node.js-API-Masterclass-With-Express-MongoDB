@@ -642,6 +642,14 @@ http://localhost:5000/api/v1/bootcamps/
 
 ### 2. Bootcamp Ownership
 
+Only onwer or admin can modify bootcamp
+
+<br/>
+
+### 3. Course Ownership
+
+Only onwer or admin can modify course
+
 ---
 
 **Marley**
