@@ -1029,6 +1029,12 @@ Did not test. Need to create a bootcamp, then create review and check average ra
     -X GET localhost:5000/api/v1/auth/logout \
     | python -m json.tool
 
+<br/>
+
+### 2. Prevent NoSQL Injection & Sanitize Data
+
+    $ npm install --save express-mongo-sanitize
+
 ---
 
 **Marley**
