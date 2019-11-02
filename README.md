@@ -1058,6 +1058,41 @@ https://github.com/expressjs/cors
 
     $ npm install --save cors
 
+<br/>
+
+## 11. Documentation & Deploy
+
+**Steps to deploy:**  
+https://gist.github.com/bradtraversy/cd90d1ed3c462fe3bddd11bf8953a896
+
+<br/>
+
+### 1. Documentation With Postman & Docgen
+
+<br/>
+
+### 2. Digital Ocean Droplet & Server Log In
+
+<br/>
+
+### 3. Prepare & Push To Github
+
+<br/>
+
+### 4. Clone Repo On Server
+
+<br/>
+
+### 5. PM2 Process Manager Setup
+
+<br/>
+
+### 6. NGINX Reverse Proxy Setup
+
+<br/>
+
+### 7. Domain, SSL & Wrap Up
+
 ---
 
 **Marley**
