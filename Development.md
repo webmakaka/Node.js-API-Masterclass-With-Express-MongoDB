@@ -1,9 +1,4 @@
-# [Brad Traversy] Node.js API Masterclass With Express &amp; MongoDB [2019, ENG]
-
-**Original src:**  
-https://github.com/bradtraversy/devcamper-api
-
----
+# [Brad Traversy] Node.js API Masterclass With Express &amp; MongoDB [ENG, 2019]
 
 <br/>
 
@@ -1092,7 +1087,6 @@ https://gist.github.com/bradtraversy/cd90d1ed3c462fe3bddd11bf8953a896
 <br/>
 
 ### 7. Domain, SSL & Wrap Up
-
 
 <br/>
 
