@@ -11,7 +11,7 @@ https://github.com/bradtraversy/devcamper-api
 
 <br/>
 
-### How to Run
+## How to Run
 
 <br/>
 

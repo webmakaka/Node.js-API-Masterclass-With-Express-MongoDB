@@ -4,7 +4,7 @@ const {
   getReview,
   addReview,
   updateReview,
-  deleteReview
+  deleteReview,
 } = require('../controllers/reviews');
 
 const Review = require('../models/Review');
@@ -19,7 +19,7 @@ router
   .get(
     advancedResults(Review, {
       path: 'bootcamp',
-      select: 'name description'
+      select: 'name description',
     }),
     getReviews
   )

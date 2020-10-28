@@ -14,7 +14,7 @@ exports.getReviews = asyncHandler(async (req, res, next) => {
     return res.status(200).json({
       success: true,
       count: reviews.length,
-      data: reviews
+      data: reviews,
     });
   } else {
     res.status(200).json(res.advancedResults);
@@ -27,7 +27,7 @@ exports.getReviews = asyncHandler(async (req, res, next) => {
 exports.getReview = asyncHandler(async (req, res, next) => {
   const review = await Review.findById(req.params.id).populate({
     path: 'bootcamp',
-    select: 'name description'
+    select: 'name description',
   });
 
   if (!review) {
@@ -38,7 +38,7 @@ exports.getReview = asyncHandler(async (req, res, next) => {
 
   return res.status(200).json({
     success: true,
-    data: review
+    data: review,
   });
 });
 
@@ -64,7 +64,7 @@ exports.addReview = asyncHandler(async (req, res, next) => {
 
   return res.status(201).json({
     success: true,
-    data: review
+    data: review,
   });
 });
 
@@ -87,12 +87,12 @@ exports.updateReview = asyncHandler(async (req, res, next) => {
 
   review = await Review.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
-    runValidators: true
+    runValidators: true,
   });
 
   return res.status(200).json({
     success: true,
-    data: review
+    data: review,
   });
 });
 
@@ -117,6 +117,6 @@ exports.deleteReview = asyncHandler(async (req, res, next) => {
 
   return res.status(200).json({
     success: true,
-    data: {}
+    data: {},
   });
 });

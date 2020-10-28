@@ -14,7 +14,7 @@ exports.getCourses = asyncHandler(async (req, res, next) => {
     return res.status(200).json({
       success: true,
       count: courses.length,
-      data: courses
+      data: courses,
     });
   } else {
     res.status(200).json(res.advancedResults);
@@ -27,7 +27,7 @@ exports.getCourses = asyncHandler(async (req, res, next) => {
 exports.getCourse = asyncHandler(async (req, res, next) => {
   const course = await Course.findById(req.params.id).populate({
     path: 'bootcamp',
-    select: 'name description'
+    select: 'name description',
   });
   if (!course) {
     return next(
@@ -37,7 +37,7 @@ exports.getCourse = asyncHandler(async (req, res, next) => {
   }
   return res.status(200).json({
     success: true,
-    data: course
+    data: course,
   });
 });
 
@@ -72,7 +72,7 @@ exports.addCourse = asyncHandler(async (req, res, next) => {
 
   return res.status(200).json({
     success: true,
-    data: course
+    data: course,
   });
 });
 
@@ -101,12 +101,12 @@ exports.updateCourse = asyncHandler(async (req, res, next) => {
 
   course = await Course.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
-    runValidators: true
+    runValidators: true,
   });
 
   return res.status(200).json({
     success: true,
-    data: course
+    data: course,
   });
 });
 
@@ -137,6 +137,6 @@ exports.deleteCourse = asyncHandler(async (req, res, next) => {
 
   return res.status(200).json({
     success: true,
-    data: {}
+    data: {},
   });
 });

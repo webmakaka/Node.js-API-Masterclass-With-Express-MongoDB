@@ -12,7 +12,7 @@ exports.getMe = asyncHandler(async (req, res, next) => {
 
   return res.status(200).json({
     success: true,
-    data: user
+    data: user,
   });
 });
 
@@ -22,12 +22,12 @@ exports.getMe = asyncHandler(async (req, res, next) => {
 exports.logout = asyncHandler(async (req, res, next) => {
   res.cookie('token', 'node', {
     expires: new Date(Date.now() + 10 * 1000),
-    httpOnly: true
+    httpOnly: true,
   });
 
   return res.status(200).json({
     success: true,
-    data: {}
+    data: {},
   });
 });
 
@@ -57,12 +57,12 @@ exports.forgotPassword = asyncHandler(async (req, res, next) => {
     await sendEmail({
       email: user.email,
       subject: 'Password reset token',
-      message
+      message,
     });
 
     return res.status(200).json({
       success: true,
-      data: `Email sent to ${user.email}`
+      data: `Email sent to ${user.email}`,
     });
   } catch (err) {
     console.log(err);
@@ -70,7 +70,7 @@ exports.forgotPassword = asyncHandler(async (req, res, next) => {
     user.resetPasswordExpire = undefined;
 
     await user.save({
-      validateBeforeSave: false
+      validateBeforeSave: false,
     });
 
     return next(new ErrorResponse('Email could not be send', 500));
@@ -83,17 +83,17 @@ exports.forgotPassword = asyncHandler(async (req, res, next) => {
 exports.updateDetails = asyncHandler(async (req, res, next) => {
   const fieldsToUpdate = {
     name: req.body.name,
-    email: req.body.email
+    email: req.body.email,
   };
 
   const user = await User.findByIdAndUpdate(req.user.id, fieldsToUpdate, {
     new: true,
-    runValidators: true
+    runValidators: true,
   });
 
   return res.status(200).json({
     success: true,
-    data: user
+    data: user,
   });
 });
 
@@ -126,7 +126,7 @@ exports.resetpassword = asyncHandler(async (req, res, next) => {
 
   const user = await User.findOne({
     resetPasswordToken,
-    resetPasswordExpire: { $gt: Date.now() }
+    resetPasswordExpire: { $gt: Date.now() },
   });
 
   if (!user) {
@@ -152,7 +152,7 @@ exports.register = asyncHandler(async (req, res, next) => {
     name,
     email,
     password,
-    role
+    role,
   });
 
   sendTokenResponse(user, 200, res);
@@ -195,18 +195,15 @@ const sendTokenResponse = (user, statusCode, res) => {
     expires: new Date(
       Date.now() + process.env.JWT_COOKIE_EXPIR * 24 * 60 * 60 * 1000
     ),
-    httpOnly: true
+    httpOnly: true,
   };
 
   if (process.env.NODE_ENV === 'production') {
     options.secure = true;
   }
 
-  return res
-    .status(statusCode)
-    .cookie('token', token, options)
-    .json({
-      success: true,
-      token
-    });
+  return res.status(statusCode).cookie('token', token, options).json({
+    success: true,
+    token,
+  });
 };

@@ -25,7 +25,7 @@ exports.getBootcamp = asyncHandler(async (req, res, next) => {
 
   return res.status(200).json({
     success: true,
-    data: bootcamp
+    data: bootcamp,
   });
 });
 
@@ -53,7 +53,7 @@ exports.createBootcamp = asyncHandler(async (req, res, next) => {
 
   return res.status(200).json({
     success: true,
-    data: bootcamp
+    data: bootcamp,
   });
 });
 
@@ -81,12 +81,12 @@ exports.updateBootcamp = asyncHandler(async (req, res, next) => {
 
   bootcamp = await Bootcamp.findOneAndUpdate(req.params.id, req.body, {
     new: true,
-    runValidators: true
+    runValidators: true,
   });
 
   return res.status(200).json({
     success: true,
-    data: bootcamp
+    data: bootcamp,
   });
 });
 
@@ -116,7 +116,7 @@ exports.deleteBootcamp = asyncHandler(async (req, res, next) => {
 
   return res.status(200).json({
     success: true,
-    data: {}
+    data: {},
   });
 });
 
@@ -136,13 +136,13 @@ exports.getBootcampsInRadius = asyncHandler(async (req, res, next) => {
   // Earth Radius = 3,963 mi / 6,378 km
   const radius = distance / 3963;
   const bootcamps = await Bootcamp.find({
-    location: { $geoWithin: { $centerSphere: [[lng, lat], radius] } }
+    location: { $geoWithin: { $centerSphere: [[lng, lat], radius] } },
   });
 
   res.status(200).json({
     success: true,
     count: bootcamps.length,
-    data: bootcamps
+    data: bootcamps,
   });
 });
 
@@ -191,7 +191,7 @@ exports.bootcampPhotoUpload = asyncHandler(async (req, res, next) => {
   // Create custom filename
   file.name = `photo_${bootcamp._id}${path.parse(file.name).ext}`;
 
-  file.mv(`${process.env.FILE_UPLOAD_PATH}/${file.name}`, async err => {
+  file.mv(`${process.env.FILE_UPLOAD_PATH}/${file.name}`, async (err) => {
     if (err) {
       console.error(err);
       return next(new ErrorResponse(`Problem with file upload`, 500));
@@ -201,7 +201,7 @@ exports.bootcampPhotoUpload = asyncHandler(async (req, res, next) => {
 
     return res.status(200).json({
       success: true,
-      data: file.name
+      data: file.name,
     });
   });
 });

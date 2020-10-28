@@ -4,7 +4,7 @@ const {
   getCourse,
   addCourse,
   updateCourse,
-  deleteCourse
+  deleteCourse,
 } = require('../controllers/courses');
 
 const Course = require('../models/Course');
@@ -19,7 +19,7 @@ router
   .get(
     advancedResults(Course, {
       path: 'bootcamp',
-      select: 'name description'
+      select: 'name description',
     }),
     getCourses
   )
