@@ -3,11 +3,45 @@
 **Original src:**  
 https://github.com/bradtraversy/devcamper-api
 
+<br/>
+
+### [Development step by step](./Development.md)
+
 ---
 
 <br/>
 
-### [Development step by step](./Development.md)
+### How to Run
+
+<br/>
+
+### Update Config
+
+**api/config/config.env**
+
+Need update MONGO_URI at least
+
+<br/>
+
+### Install packages
+
+    $ npm install
+
+<br/>
+
+### Database Seeder For Bootcamps
+
+    // ImportData
+    $ node seeder -i
+
+    // DestroyData
+    $ node seeder -d
+
+<br/>
+
+### Run Application in development mode
+
+    $ npm run dev
 
 <br/>
 
